@@ -12,7 +12,7 @@
         <header class="header">
             <div class="container header__container">
                 <div class="header__block">
-                    <div class="header__wrap">
+                    <div class="header__wrap header__circleBox">
                         <div class="header__circle">40%</div>
                         <div class="header__pic header__pic0">
                             <img src="img/pic1.jpg" alt="no" class="header__img">
@@ -410,61 +410,72 @@
 
     
     
- // for(let i=0;i<block.length;i++){
-    //   let a = `<div class="header__javaCircle${i}>`
-    //   let b = `.header__javaCircle`
-    //   console.log(a)
-    //   $(block[i]).after({a})
-    //   let random = randomCreate(60)
-    //   let circle = $({b})
-    //   circle.css({'top': (random)})
-    //   circle.css({'left': (random)})
-    // }
+    let Action = {
+      place: $('.header__pic'),
+      color: ['red','blue','violet','green','pink','yellow'],
+      size: ['100','120','130'],
+      position: ['0','0','0','0'],
+      class: ['<div class="header__javaCircle">','<div class="header__javaCircle2">','<div class="header__javaCircle3">','<div class="header__javaCircle4">'],
+      class2:['.header__javaCircle','.header__javaCircle2','.header__javaCircle3','.header__javaCircle4'],
+      randomCreate(min,max){
+        let a = Math.floor( Math.random() * max + min)
+        return a
+      },
+      arrayToOneValue(array){
+        let arr = array[this.randomCreate(0,array.length)]
+        return arr
+      },
+      roundingToTen(func){
+        let a;
+        let multiplier = 10;
+        a = func * multiplier
+        return a
+      },
+      valueToPositionArray(array){
+        let min = 3;
+        let max = 13;
+        for(let i=0;i < array.length;i++){
+        array[i] = this.roundingToTen(this.randomCreate(min,max))
+        }
+        return array
+      },
+      addNewClassToProject(class_array){
+        console.log(class_array)
+        for(let i = 0;i < class_array.length;i++){
+          let value = class_array[i]
+          $(this.place[i]).after(value)
+        }
+      },
+      addNewRandomPropertiesForClass(class_array){
+        for(let i = 0;i < class_array.length;i++){
+          let color = this.arrayToOneValue(this.color);
+          let size = this.arrayToOneValue(this.size);
+          let top = this.roundingToTen(this.randomCreate(-2,12));
+          let right = this.roundingToTen(this.randomCreate(6,12));
+          let left = this.roundingToTen(this.randomCreate(2,12));
+          let bottom = this.roundingToTen(this.randomCreate(-2,12));
 
+          this.addNewClassToProject(class_array);
 
-     
-    
-    
-    //  position: top,right,bottom,left 
-    
-    // let Action = {
-    //   place: $('.header__pic'),
-    //   color: ['red','blue','white','green'],
-    //   size: ['30','50','80','100','120'],
-    //   position: ['0','0','0','0'],
-    //   class: ['<div class="header__javaCircle">','<div class="header__javaCircle2">','<div class="header__javaCircle3">','<div class="header__javaCircle4">'],
-    //   randomCreate(min,max){
-    //     let a = Math.floor( Math.random() * max + min)
-    //     return a
-    //   },
-    //   arrayToOneValue(array){
-    //     let arr = array[this.randomCreate(0,array.length)]
-    //     return arr
-    //   },
-    //   roundingToTen(func){
-    //     let a;
-    //     let multiplier = 10;
-    //     a = func * multiplier
-    //     return a
-    //   },
-    //   valueToPositionArray(array){
-    //     let min = 3;
-    //     let max = 13;
-    //     for(let i=0;i < array.length;i++){
-    //     array[i] = this.roundingToTen(this.randomCreate(min,max))
-    //     }
-    //     return array
-    //   },
-    //   addNewClassToProject(class_array){
-    //     console.log(class_array)
-    //     for(let i = 0;i < class_array.length;i++){
-    //       let value = class_array[i]
-    //       $(this.place[i]).after(value)
-    //     }
-    //   }
+          let place = $(this.class2[i]);
+          place.css({'background':(color)});
+          place.css({'width':(size),'height':(size)})
+          place.css({'top':(top),'left':(left),'bottom':(bottom),'right':(right)})
 
-    // }
-
+        }  
+    },
+    addDeathZone(func){
+        let min = 30;
+        let max = 130;
+        let value = "";
+        if(func <=  min){
+          value = "left"
+        } else if(func >= max){
+          value = "right"
+        }
+        return value
+    }
+  }
     // console.log(Action.roundingToTen(Action.randomCreate(3,14)))
     // console.log(Action.valueToPositionArray(Action.position))
 
@@ -472,9 +483,13 @@
 
     // Action.addNewClassToProject(Action.class)
 
-  
-
+    // Action.addNewClassToProject(Action.class)
+    // let place = $(Action.class2[0])
+    // place.css({'background':(Action.arrayToOneValue(Action.color))});
     
+   
+  Action.addNewRandomPropertiesForClass(Action.class)
+
 </script>
 </body>
 </html>
