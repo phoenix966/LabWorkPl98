@@ -112,6 +112,8 @@ body {
 .header__pic {
   max-width: 7.5rem;
   margin: 0 auto;
+  position: relative;
+  z-index: 1;
 }
 .header__img {
   width: 100%;
@@ -127,6 +129,7 @@ body {
   position: absolute;
   top: -10px;
   right: 60px;
+  z-index: 2;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,6 +183,40 @@ body {
   height: 100px;
   background: red;
   border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+  left: 40px;
+  top: -40px;
+}
+.header__javaCircle2 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+  left: 40px;
+  top: -40px;
+}
+.header__javaCircle3 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+  left: 40px;
+  top: -40px;
+}
+.header__javaCircle4 {
+  width: 100px;
+  height: 100px;
+  background: red;
+  border-radius: 50%;
+  position: absolute;
+  z-index: 0;
+  left: 40px;
+  top: -40px;
 }
 
 .btn--red {

@@ -14,7 +14,7 @@
                 <div class="header__block">
                     <div class="header__wrap">
                         <div class="header__circle">40%</div>
-                        <div class="header__pic">
+                        <div class="header__pic header__pic0">
                             <img src="img/pic1.jpg" alt="no" class="header__img">
                         </div>
                     </div>
@@ -408,12 +408,72 @@
 <script src="js/jquery.js"></script>
 <script>
 
-    let block = $('.header__pic')
-    let newElem = $('<div class="header__javaCircle">')
-    block.append(newElem)
-    newElem.css('')
     
     
+ // for(let i=0;i<block.length;i++){
+    //   let a = `<div class="header__javaCircle${i}>`
+    //   let b = `.header__javaCircle`
+    //   console.log(a)
+    //   $(block[i]).after({a})
+    //   let random = randomCreate(60)
+    //   let circle = $({b})
+    //   circle.css({'top': (random)})
+    //   circle.css({'left': (random)})
+    // }
+
+
+     
+    
+    
+    //  position: top,right,bottom,left 
+    
+    // let Action = {
+    //   place: $('.header__pic'),
+    //   color: ['red','blue','white','green'],
+    //   size: ['30','50','80','100','120'],
+    //   position: ['0','0','0','0'],
+    //   class: ['<div class="header__javaCircle">','<div class="header__javaCircle2">','<div class="header__javaCircle3">','<div class="header__javaCircle4">'],
+    //   randomCreate(min,max){
+    //     let a = Math.floor( Math.random() * max + min)
+    //     return a
+    //   },
+    //   arrayToOneValue(array){
+    //     let arr = array[this.randomCreate(0,array.length)]
+    //     return arr
+    //   },
+    //   roundingToTen(func){
+    //     let a;
+    //     let multiplier = 10;
+    //     a = func * multiplier
+    //     return a
+    //   },
+    //   valueToPositionArray(array){
+    //     let min = 3;
+    //     let max = 13;
+    //     for(let i=0;i < array.length;i++){
+    //     array[i] = this.roundingToTen(this.randomCreate(min,max))
+    //     }
+    //     return array
+    //   },
+    //   addNewClassToProject(class_array){
+    //     console.log(class_array)
+    //     for(let i = 0;i < class_array.length;i++){
+    //       let value = class_array[i]
+    //       $(this.place[i]).after(value)
+    //     }
+    //   }
+
+    // }
+
+    // console.log(Action.roundingToTen(Action.randomCreate(3,14)))
+    // console.log(Action.valueToPositionArray(Action.position))
+
+    // $(Action.place[0]).after(Action.class[1])
+
+    // Action.addNewClassToProject(Action.class)
+
+  
+
     
 </script>
 </body>
